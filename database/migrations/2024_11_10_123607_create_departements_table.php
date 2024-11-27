@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('documents', function (Blueprint $table) {
+        Schema::create('departements', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("demande_id");
-            $table->string("url");
-            $table->string("type");
+            $table->string("code");
+            $table->string("nom");
+            $table->string("description");
             $table->timestamps();
-
-            $table->foreign("demande_id")->references("id")->on("demandes");
         });
     }
 
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('documents');
+        Schema::dropIfExists('departements');
     }
 };
