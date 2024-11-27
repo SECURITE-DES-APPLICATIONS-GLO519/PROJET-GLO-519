@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('etudiants', function (Blueprint $table) {
+        Schema::create('quitus', function (Blueprint $table) {
             $table->id();
-            $table->string('matricule')->unique();
-            $table->string('nom');
-            $table->string('prenom');
-            $table->string('niveau');
-            $table->string('cycle');
+            $table->foreignId('etudiant_id')->constrained()->onDelete('cascade');
+            $table->date('annee');
             $table->timestamps();
         });
     }
@@ -27,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('etudiants');
+        Schema::dropIfExists('quitus');
     }
 };
