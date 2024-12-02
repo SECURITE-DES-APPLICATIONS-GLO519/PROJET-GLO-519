@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EtudiantDashbordController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -33,9 +34,20 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::prefix('etudiant')->group(function(){
-    // Route::get('', view('dashboard'));
-    Route::get('add_information',[EtudiantDashbordController::class,'add_information']);
+Route::prefix('test')->group(function(){
+    Route::get('/login',[UserController::class, 'login'])->name('auth.login');
+    Route::post('/login',[UserController::class, 'dologin']);
+    Route::delete('/logout',[UserController::class, 'logout'])->name('auth.logout');
+
+
+    Route::prefix('dashboard')->group(function(){
+        Route::get('',[EtudiantDashbordController::class,'index' ])->name('dashboard1');
+    });
+    
+    
+
+
+
 });
 
 require __DIR__.'/auth.php';

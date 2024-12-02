@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('administrateurs', function (Blueprint $table) {
             $table->id();
+            $table->string('nom');
+            $table->unsignedBigInteger('user_id');
+            $table->string('service');
+            $table->unsignedBigInteger('departement_id')->nullable(true);
+            $table->string('role')->nullable(true); 
             $table->timestamps();
         });
     }

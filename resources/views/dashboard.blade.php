@@ -22,9 +22,9 @@
             </div>
             <div class="navbar-collapse">
                 <div class="navbar-nav ms-auto">
-                    @auth
-                        <button class="btn btn-medium"></button>
-                        <form class="nav-item" action="" method="POST">
+                @auth
+                        <button class="btn btn-medium">{{Auth::user()->name}}</button>
+                        <form class="nav-item" action="{{route('logout')}}" method="POST">
                             @method("delete")
                             @csrf
                             <button class="btn btn-black">se deconnecter</button>
@@ -32,7 +32,7 @@
                     @endauth
                     @guest
                         <div class="nav-item">
-                            <a href="">se connecter</a>
+                            <a href="{{route('login')}}">se connecter</a>
                         </div>
                     @endguest
                 </div>
@@ -51,11 +51,12 @@
                 <img src="{{asset('icon.png')}}" class="image-profil" alt="User Image">
             </div>
                 <div class="pull-left info-panel">
-                    <p id="nomPre">Amoros</p>            
+                    <p id="nomPre">{{Auth::user()->name}}</p>            
                 </div>
             </div>
         <nav>
             <ul class="sidebar-menu" id="menu">
+                <li><a href="">Accueil</a></li>
                 <li><a href="">Ajout d'information</a></li>
                 <li><a href="">Demande de certificat de scolarite</a></li>
                 <li><a href="">Demande de releve de note</a></li>

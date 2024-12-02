@@ -12,4 +12,8 @@ class EtudiantDashbordController extends Controller
         // return Inertia::render('Components/auth/sign-in-form');
         return Inertia::render('demande/test');
     }
+
+    public function index(){
+        return view('dashboard');
+    }
 }
