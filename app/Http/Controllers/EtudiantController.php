@@ -5,9 +5,17 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreetudiantRequest;
 use App\Http\Requests\UpdateetudiantRequest;
 use App\Models\etudiant;
+use App\Services\AuthServices;
 
 class EtudiantController extends Controller
 {
+
+    protected $authServices;
+
+    public function __construct(AuthServices $authServices)
+    {
+        $this->authServices = $authServices;
+    }
     /**
      * Display a listing of the resource.
      */

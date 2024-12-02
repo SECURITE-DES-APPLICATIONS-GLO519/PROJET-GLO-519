@@ -5,9 +5,19 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreadministrateurRequest;
 use App\Http\Requests\UpdateadministrateurRequest;
 use App\Models\administrateur;
+use App\Services\AuthServices;
 
 class AdministrateurController extends Controller
 {
+    
+    
+    protected $authServices;
+
+    public function __construct(AuthServices $authServices)
+    {
+        $this->authServices = $authServices;
+    }
+    
     /**
      * Display a listing of the resource.
      */

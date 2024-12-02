@@ -5,9 +5,17 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorenotificationRequest;
 use App\Http\Requests\UpdatenotificationRequest;
 use App\Models\notification;
+use App\Services\AuthServices;
 
 class NotificationController extends Controller
 {
+    protected $authServices;
+
+    public function __construct(AuthServices $authServices)
+    {
+        $this->authServices = $authServices;
+    }
+
     /**
      * Display a listing of the resource.
      */
