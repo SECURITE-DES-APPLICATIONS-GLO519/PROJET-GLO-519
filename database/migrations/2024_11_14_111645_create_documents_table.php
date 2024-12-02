@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string("url");
             $table->string("type");
             $table->timestamps();
-
             $table->foreign("demande_id")->references("id")->on("demandes");
         });
     }

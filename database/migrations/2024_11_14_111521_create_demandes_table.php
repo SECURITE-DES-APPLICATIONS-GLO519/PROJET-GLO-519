@@ -17,10 +17,10 @@ return new class extends Migration
             $table->string("type");
             $table->string("statut");
             $table->unsignedBigInteger("departement_id")->nullable(true);
-            $table->boolean("direction")->default(false);
-            $table->boolean("departement")->default(false);
-            $table->boolean("bibliotheque")->default(false);
-            $table->boolean("scolarite")->default(false);
+            $table->boolean("confirm_direction")->default(false);
+            $table->boolean("confirm_departement")->default(false);
+            $table->boolean("confirm_bibliotheque")->default(false);
+            $table->boolean("confirm_scolarite")->default(false);
             $table->timestamps();
 
             $table->foreign('etudiant_id')->references('id')->on('etudiants');

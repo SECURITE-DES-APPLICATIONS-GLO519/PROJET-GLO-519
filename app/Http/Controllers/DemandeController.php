@@ -5,9 +5,17 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoredemandeRequest;
 use App\Http\Requests\UpdatedemandeRequest;
 use App\Models\demande;
+use App\Services\DemandeServices;
 
 class DemandeController extends Controller
 {
+    protected $demandeServices;
+
+    public function __construct(DemandeServices $demandeServices)
+    {
+        $this->demandeServices = $demandeServices;
+    }
+   
     /**
      * Display a listing of the resource.
      */
