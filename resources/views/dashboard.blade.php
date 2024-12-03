@@ -24,7 +24,7 @@
                 <div class="navbar-nav ms-auto">
                 @auth
                         <button class="btn btn-medium">{{Auth::user()->name}}</button>
-                        <form class="nav-item" action="{{route('logout')}}" method="POST">
+                        <form class="nav-item" action="{{route('auth.logout')}}" method="POST">
                             @method("delete")
                             @csrf
                             <button class="btn btn-black">se deconnecter</button>
@@ -32,7 +32,7 @@
                     @endauth
                     @guest
                         <div class="nav-item">
-                            <a href="{{route('login')}}">se connecter</a>
+                            <a href="{{route('auth.login')}}">se connecter</a>
                         </div>
                     @endguest
                 </div>

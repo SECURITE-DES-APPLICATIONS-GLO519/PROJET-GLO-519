@@ -1,6 +1,6 @@
 @extends('dashboard')
 
-@section('title', 'Liste des pharmacie')
+@section('title', 'Liste des departements')
 @section('content')
 <div class="box-header with-border">
     <h3 class="box-title fa fa-flask">Liste des departements</h3>

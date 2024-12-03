@@ -1,5 +1,5 @@
 <div class="box-header with-border">
-    <h3 class="box-title fa fa-flask">Ajouter une pharmacie</h3>
+    <h3 class="box-title fa fa-flask">Ajouter un Administrateur</h3>
 </div>
 
 <div  class="box-body">
@@ -107,6 +107,5 @@
                 
             </form>
         </div>
-        <small class="text-left">creat by Amoros </small>
     </div>
 </div>

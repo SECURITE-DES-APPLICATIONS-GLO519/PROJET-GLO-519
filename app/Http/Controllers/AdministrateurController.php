@@ -81,27 +81,48 @@ class AdministrateurController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(administrateur $administrateur)
+    public function update(administrateur $table)
     {
-        //
+         $table = administrateur::join('users','administrateurs.user_id','=','users.id')
+                                ->select(
+                                    'administrateurs.*',
+                                    'administrateurs.id as id_a',
+                                    'users.name as name',
+                                    'users.email as email',
+                                    )
+                                ->where('administrateurs.id',"=",$table->id)
+                                ->first();
+        //  dd($table);
+         $services = ['Scolarite', 'Bibliotheque', 'Departement', 'Direction'];
+         $departement = Departement::find($table->departement_id);
+        //  dd($departement);
+         $table = (object) $table;
+         $departements = Departement::all();
+         return view('administrateur.create',['table'=>$table,'departement'=> $departement,'departements' => $departements,'services'=> $services]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(administrateur $administrateur)
-    {
-        // $table = administrateur::join('users','',=,)
+    public function update_(AdministrateurResquest $administrateurResquest, administrateur $table){
+        $user = User::find($table->user_id);
+        $user = $user->update($administrateurResquest->validated());
+        $administrateur = $table->update([
+            // $request->validated(),
+            'service'=>$administrateurResquest->input('service'),
+            'departement_id'=>$administrateurResquest->input('departement_id'),
+            'nom'=>$administrateurResquest->input('nom'),
+        ]);
+        return redirect()->route('administrateur.list');
     }
-
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(administrateur $administrateur)
+    public function delete(administrateur $table)
     {
-        //
+        $user = User::findOrFail($table->user_id);
+        $table->delete();
+        if($user){
+            $user->delete();
+        }
+
+        return redirect()->route('administrateur.list');
     }
 }

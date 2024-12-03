@@ -49,6 +49,7 @@ Route::prefix('test')->group(function(){
             Route::get('create',[AdministrateurController::class,'create'])->name('create');
             Route::post('create',[AdministrateurController::class,'create_']);
             Route::get('update/{table}',[AdministrateurController::class, 'update'])->name('update');
+            Route::post('update/{table}',[AdministrateurController::class, 'update_']);
             Route::get('delete/{table}',[AdministrateurController::class, 'delete'])->name('delete');
         });
         Route::prefix('departement')->name('departement.')->group(function(){
@@ -61,10 +62,6 @@ Route::prefix('test')->group(function(){
         });
 
     });
-    
-    
-
-
 
 });
 
