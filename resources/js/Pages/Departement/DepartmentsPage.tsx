@@ -98,7 +98,7 @@ const DepartmentPage: React.FC = () => {
         setSelectedDepartment(null);
         setIsModalOpen(true); // Ouvre le modal en mode création
     };
-
+// hi
     return (
         <AuthenticatedLayout
             header={
