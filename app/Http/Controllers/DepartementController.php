@@ -5,12 +5,17 @@ namespace App\Http\Controllers;
 use App\Http\Requests\DepartementRequest;
 use App\Models\Departement;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class DepartementController extends Controller
 {
     public function index(){
         $table = Departement::paginate(20);
-        return view('departement.list',['Listes'=>$table]);
+        // return view('departement.list',['Listes'=>$table]);
+  
+        return Inertia::render('Departement/DepartmentsPage', [
+            'departments' => $table->items(),
+        ]);
     }
 
     public function create()

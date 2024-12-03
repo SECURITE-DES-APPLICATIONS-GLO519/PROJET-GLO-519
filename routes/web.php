@@ -54,10 +54,10 @@ Route::prefix('test')->group(function(){
         Route::prefix('departement')->name('departement.')->group(function(){
             Route::get('',[DepartementController::class,'index'])->name('list');
             Route::get('create',[DepartementController::class,'create'])->name('create');
-            Route::post('create',[DepartementController::class,'create_']);
+            Route::post('create',[DepartementController::class,'create_'])->name('create_');
             Route::get('update/{table}',[DepartementController::class, 'update'])->name('update');
-            Route::post('update/{table}',[DepartementController::class, 'update_']);
-            Route::get('delete/{table}',[DepartementController::class, 'delete'])->name('delete');
+            Route::put('update/{table}',[DepartementController::class, 'update_'])->name('update_');
+            Route::delete('delete/{table}',[DepartementController::class, 'delete'])->name('delete');
         });
 
     });

@@ -1,4 +1,4 @@
-import { Config } from 'ziggy-js';
+import { Config } from "ziggy-js";
 
 export interface User {
     id: number;
@@ -8,10 +8,19 @@ export interface User {
 }
 
 export type PageProps<
-    T extends Record<string, unknown> = Record<string, unknown>,
+    T extends Record<string, unknown> = Record<string, unknown>
 > = T & {
     auth: {
         user: User;
     };
     ziggy: Config & { location: string };
 };
+
+export interface Department {
+    id: string;
+    code: string;
+    nom: string;
+    description: string;
+    // created_at?: Date;
+    // updated_at:? Date;
+}
