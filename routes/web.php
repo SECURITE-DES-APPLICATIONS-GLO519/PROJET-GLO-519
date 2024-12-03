@@ -68,8 +68,9 @@ Route::prefix('test')->group(function(){
             Route::get('update/{table}',[EtudiantController::class, 'update'])->name('update');
             Route::post('update/{table}',[EtudiantController::class, 'update_']);
             Route::get('delete/{table}',[EtudiantController::class, 'delete'])->name('delete');
+            Route::get('add_information',[EtudiantDashbordController::class, 'add_information'])->name('add_information');
+            Route::post('add_information',[EtudiantDashbordController::class, 'add_information_'])->name('add_information_');
         });
-
     });
 
 });

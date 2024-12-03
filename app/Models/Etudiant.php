@@ -21,6 +21,7 @@ class Etudiant extends Model
         'prenom',
         'niveau',
         'cycle',
+        'user_id',
     ];
 
     /**

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('matricule')->unique();
             $table->unsignedBigInteger('user_id')->unique();
             $table->string('nom');
-            $table->string('prenom');
+            $table->string('prenom')->nullable();
             $table->string('niveau');
             $table->string('cycle');
             $table->timestamps();
