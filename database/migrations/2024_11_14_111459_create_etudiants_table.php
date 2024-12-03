@@ -14,11 +14,14 @@ return new class extends Migration
         Schema::create('etudiants', function (Blueprint $table) {
             $table->id();
             $table->string('matricule')->unique();
+            $table->unsignedBigInteger('user_id')->unique();
             $table->string('nom');
             $table->string('prenom');
             $table->string('niveau');
             $table->string('cycle');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

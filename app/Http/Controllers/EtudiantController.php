@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreetudiantRequest;
 use App\Http\Requests\UpdateetudiantRequest;
+use App\Http\Requests\UserRequest;
 use App\Models\etudiant;
+use App\Models\User;
 use App\Services\AuthServices;
 
 class EtudiantController extends Controller
@@ -19,9 +21,16 @@ class EtudiantController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        //
+    public function index(){
+        $Listes =User::where('role','=','Etudiant')
+        ->leftJoin('etudiants','etudiants.user_id','=','users.id')
+        ->select(
+            'users.*',
+            'etudiants.nom as nom',
+        )
+        ->paginate(20);
+        // dd($Listes);
+        return view ('etudiant.list',['Listes'=>$Listes]);
     }
 
     /**
@@ -29,15 +38,14 @@ class EtudiantController extends Controller
      */
     public function create()
     {
-        //
+        $table = new User();
+        return view('etudiant.create',['table'=>$table]);
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreetudiantRequest $request)
+    public function create_(UserRequest $userRequest)
     {
-        //
+        $table = User::create($userRequest->validated());
+
+        return redirect()->route('etudiant.list');
     }
 
     /**
@@ -49,26 +57,20 @@ class EtudiantController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(etudiant $etudiant)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateetudiantRequest $request, etudiant $etudiant)
+    public function update(User $table)
     {
-        //
+        return view('etudiant.edit', ['table'=>$table]);
     }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(etudiant $etudiant)
+    public function update_(User $table, UserRequest $userRequest)
     {
-        //
+        $table = $table->update($userRequest->validated());
+        return redirect()->route('etudiant.list');
+    }
+   
+    public function delete(User $table){
+        $table->delete();
+        return redirect()->route('etudiant.list');
     }
 }

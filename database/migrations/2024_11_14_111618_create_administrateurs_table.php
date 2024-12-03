@@ -18,6 +18,10 @@ return new class extends Migration
             $table->enum('service',['Scolarite', 'Bibliotheque', 'Departement', 'Direction'])->nullable();
             $table->unsignedBigInteger('departement_id')->nullable();
             $table->timestamps();
+
+            $table->foreign("user_id")->references("id")->on("users");
+            $table->foreign("departement_id")->references("id")->on("departements");
+
         });
     }
 

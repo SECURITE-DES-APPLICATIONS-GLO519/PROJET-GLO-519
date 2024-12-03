@@ -24,7 +24,7 @@ class UserController extends Controller
             return redirect()->intended(route('dashboard1'));
         }
         return to_route('auth.login')->withErrors([
-            'email'=>"email invalide" 
+            'email'=>"login incorrect" 
         ])->onlyInput('email');
     }
 
@@ -33,12 +33,12 @@ class UserController extends Controller
         return redirect()->intended(route('login'));
     }
 
-    public function list(){
+    public function index(){
         $Listes =User::paginate(20);
-        return view ('user.user-list',['Listes'=>$Listes]);
+        return view ('user.list',['Listes'=>$Listes]);
     }
 
-    public function createUser(){
+    public function create(){
         $hidden = '';
         $table = new User();
         $user = Auth::user();

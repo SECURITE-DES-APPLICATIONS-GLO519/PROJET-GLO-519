@@ -51,7 +51,7 @@ class DocumentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatedocumentRequest $request, document $document)
+    public function update( document $document)
     {
         //
     }

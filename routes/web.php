@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdministrateurController;
 use App\Http\Controllers\DepartementController;
+use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\EtudiantDashbordController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
@@ -59,6 +60,14 @@ Route::prefix('test')->group(function(){
             Route::get('update/{table}',[DepartementController::class, 'update'])->name('update');
             Route::post('update/{table}',[DepartementController::class, 'update_']);
             Route::get('delete/{table}',[DepartementController::class, 'delete'])->name('delete');
+        });
+        Route::prefix('etudiant')->name('etudiant.')->group(function(){
+            Route::get('',[EtudiantController::class,'index'])->name('list');
+            Route::get('create',[EtudiantController::class,'create'])->name('create');
+            Route::post('create',[EtudiantController::class,'create_']);
+            Route::get('update/{table}',[EtudiantController::class, 'update'])->name('update');
+            Route::post('update/{table}',[EtudiantController::class, 'update_']);
+            Route::get('delete/{table}',[EtudiantController::class, 'delete'])->name('delete');
         });
 
     });
