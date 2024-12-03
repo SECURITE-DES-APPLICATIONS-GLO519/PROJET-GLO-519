@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdministrateurController;
+use App\Http\Controllers\DepartementController;
 use App\Http\Controllers\EtudiantDashbordController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
@@ -40,8 +42,24 @@ Route::prefix('test')->group(function(){
     Route::delete('/logout',[UserController::class, 'logout'])->name('auth.logout');
 
 
-    Route::prefix('dashboard')->group(function(){
+    Route::prefix('dashboard')->middleware('auth')->group(function(){
         Route::get('',[EtudiantDashbordController::class,'index' ])->name('dashboard1');
+        Route::prefix('administrateur')->name('administrateur.')->group(function(){
+            Route::get('',[AdministrateurController::class,'index'])->name('list');
+            Route::get('create',[AdministrateurController::class,'create'])->name('create');
+            Route::post('create',[AdministrateurController::class,'create_']);
+            Route::get('update/{table}',[AdministrateurController::class, 'update'])->name('update');
+            Route::get('delete/{table}',[AdministrateurController::class, 'delete'])->name('delete');
+        });
+        Route::prefix('departement')->name('departement.')->group(function(){
+            Route::get('',[DepartementController::class,'index'])->name('list');
+            Route::get('create',[DepartementController::class,'create'])->name('create');
+            Route::post('create',[DepartementController::class,'create_']);
+            Route::get('update/{table}',[DepartementController::class, 'update'])->name('update');
+            Route::post('update/{table}',[DepartementController::class, 'update_']);
+            Route::get('delete/{table}',[DepartementController::class, 'delete'])->name('delete');
+        });
+
     });
     
     

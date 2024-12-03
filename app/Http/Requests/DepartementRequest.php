@@ -4,14 +4,14 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class Updateetudiant_notificationRequest extends FormRequest
+class DepartementRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,9 @@ class Updateetudiant_notificationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nom'=>'required|string',
+            'code'=>'required|string',
+            'description'=>'required|string',
         ];
     }
 }

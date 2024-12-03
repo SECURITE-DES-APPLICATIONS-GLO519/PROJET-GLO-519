@@ -56,6 +56,8 @@
             </div>
         <nav>
             <ul class="sidebar-menu" id="menu">
+                <li><a href="{{route('administrateur.list')}}">Administrateur</a></li>
+                <li><a href="{{route('departement.list')}}">Departement</a></li>
                 <li><a href="">Accueil</a></li>
                 <li><a href="">Ajout d'information</a></li>
                 <li><a href="">Demande de certificat de scolarite</a></li>

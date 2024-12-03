@@ -4,14 +4,14 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class Updateservice_informatiqueRequest extends FormRequest
+class AdministrateurResquest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,14 @@ class Updateservice_informatiqueRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nom'=>'required|string',
+            'user_id'=>'nullable|integer',
+            'service'=>'required|string',
+            'departement_id'=>'nullable|integer',
+            'role'=>'required|string',
+            'name'=>'required|string',
+            'password'=>'required|string',
+            'email'=>'required|string'
         ];
     }
 }

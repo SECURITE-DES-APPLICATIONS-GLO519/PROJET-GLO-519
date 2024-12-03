@@ -15,9 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('nom');
             $table->unsignedBigInteger('user_id');
-            $table->string('service');
-            $table->unsignedBigInteger('departement_id')->nullable(true);
-            $table->string('role')->nullable(true); 
+            $table->enum('service',['Scolarite', 'Bibliotheque', 'Departement', 'Direction'])->nullable();
+            $table->unsignedBigInteger('departement_id')->nullable();
             $table->timestamps();
         });
     }
