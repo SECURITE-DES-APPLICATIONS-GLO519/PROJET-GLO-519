@@ -22,7 +22,7 @@
             </div>
             <div class="navbar-collapse">
                 <div class="navbar-nav ms-auto">
-                @auth
+                    @auth
                         <button class="btn btn-medium">{{Auth::user()->name}}</button>
                         <form class="nav-item" action="{{route('auth.logout')}}" method="POST">
                             @method("delete")
@@ -55,9 +55,10 @@
                 </div>
             </div>
         <nav>
+            <ul>
                 <li><a href="">Accueil</a></li>
-                <li><a href="">Ajout d'information</a></li>
-                <li><a href="">Demande de certificat de scolarite</a></li>
+                <li><a href="{{route('etudiant.show_information')}}">Information</a></li>
+                <li><a href="{{route('etudiant.certificat.list')}}">Demande de certificat de scolarite</a></li>
                 <li><a href="">Demande de releve de note</a></li>
                 <li><a href="">Demande de retrait du diplone</a></li>
             </ul>
