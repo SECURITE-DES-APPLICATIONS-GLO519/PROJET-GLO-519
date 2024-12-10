@@ -9,6 +9,7 @@ use App\Models\administrateur;
 use App\Models\Departement;
 use App\Models\User;
 use App\Services\AuthServices;
+use Inertia\Inertia;
 
 class AdministrateurController extends Controller
 {
@@ -27,7 +28,11 @@ class AdministrateurController extends Controller
     public function index()
     {
         $table = administrateur::paginate(20);
-        return view('administrateur.list',['Listes'=>$table]);
+
+        return Inertia::render('Administrateur/AdministrateurPage', [
+            'administrateurs' => $table,
+        ]);
+        // return view('administrateur.list',['Listes'=>$table]);
     }
 
     /**
