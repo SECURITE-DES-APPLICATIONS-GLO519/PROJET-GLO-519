@@ -28,11 +28,10 @@ class AdministrateurController extends Controller
     public function index()
     {
         $table = administrateur::paginate(20);
-
-        return Inertia::render('Administrateur/AdministrateurPage', [
-            'administrateurs' => $table,
-        ]);
-        // return view('administrateur.list',['Listes'=>$table]);
+        // return Inertia::render('Administrateur/AdministrateurPage', [
+        //     'administrateurs' => $table->items(),
+        // ]);
+        return view('administrateur.list',['Listes'=>$table]);
     }
 
     /**

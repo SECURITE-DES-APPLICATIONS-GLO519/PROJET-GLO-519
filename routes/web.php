@@ -78,8 +78,8 @@ Route::prefix('test')->group(function(){
 Route::prefix('etudiant')->name('etudiant.')->group(function(){
     Route::get('',[EtudiantDashbordController::class,'index'])->name('');
     Route::get('show_information',[EtudiantDashbordController::class,'show_information'])->name('show_information');
-    Route::get('add_information',[EtudiantDashbordController::class, 'add_information'])->name('add_information');
-    Route::post('add_information',[EtudiantDashbordController::class, 'add_information_'])->name('add_information_');
+    // Route::get('add_information',[EtudiantDashbordController::class, 'add_information'])->name('add_information');
+    // Route::post('add_information',[EtudiantDashbordController::class, 'add_information_'])->name('add_information_');
     Route::prefix('certificat')->name('certificat.')->group(function(){
         Route::get('',[EtudiantDashbordController::class,'get_certificat'])->name('list');
         Route::get('add',[EtudiantDashbordController::class,'add_certificat'])->name('add');

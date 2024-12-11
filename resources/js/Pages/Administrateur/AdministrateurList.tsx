@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Inertia } from "@inertiajs/inertia";
-import { FaEdit, FaTrashAlt } from "react-icons/fa"; // Icônes
+// import { FaEdit, FaTrashAlt } from "react-icons/fa"; // Icônes
 
 import { usePage } from "@inertiajs/inertia-react";
 import Modal from "@/Components/Modal";
@@ -71,13 +71,13 @@ const AdministrateurList = () => {
                                             setUpdateModalOpen(true);
                                         }}
                                     >
-                                        <FaEdit />
+                                        {/* <FaEdit /> */}
                                     </button>
                                     <button
                                         className="text-red-500"
                                         onClick={() => handleDelete(admin)}
                                     >
-                                        <FaTrashAlt />
+                                        {/* <FaTrashAlt /> */}
                                     </button>
                                 </td>
                             </tr>
