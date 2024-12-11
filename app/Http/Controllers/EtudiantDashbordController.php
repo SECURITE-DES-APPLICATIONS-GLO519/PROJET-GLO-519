@@ -63,7 +63,7 @@ class EtudiantDashbordController extends Controller
         else{
             $table = Etudiant::create($request->validated());
         }
-        return redirect()->route('etudiant.add_information');
+        return redirect()->route('etudiant.add_information')->with('success',"Message");
         // return Inertia::render('demande/test');
     }
 
@@ -84,7 +84,7 @@ class EtudiantDashbordController extends Controller
         $demandes = Demande::where('type','=','Demande de Certificat')
                             ->where('etudiant_id','=',$etudiand->id)->paginate(20);
 
-        return view('etudiant.releve.list',['Listes'=>$demandes]);
+        return view('etudiant.certificat.list',['Listes'=>$demandes]);
     }
 
 

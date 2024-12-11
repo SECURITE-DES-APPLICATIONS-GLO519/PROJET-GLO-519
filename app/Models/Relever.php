@@ -16,4 +16,9 @@ class Relever extends Model
         'url',
         'etudiant_id'
     ];
+    public function demandes()
+    {
+        return $this->belongsToMany(Demande::class, 'demande_relevers', 'relever_id', 'demande_id');
+    }
+
 }

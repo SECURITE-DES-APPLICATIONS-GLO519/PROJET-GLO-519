@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdministrateurController;
 use App\Http\Controllers\DepartementController;
 use App\Http\Controllers\EtudiantController;
@@ -101,6 +102,25 @@ Route::prefix('etudiant')->name('etudiant.')->group(function(){
         Route::get('show/{table}',[EtudiantDashbordController::class,'show_diplome'])->name('show');
         Route::get('annuler/{table}',[EtudiantDashbordController::class,'annuler_diplome'])->name('annuler');
     });
+
+});
+
+Route::prefix('admin')->name('admin.')->group(function(){
+    Route::get('',[AdminDashboardController::class,'index'])->name('index');
+    Route::prefix('demande')->name('demande.')->group(function(){
+        Route::get('show/{table}',[AdminDashboardController::class,'show_demande'])->name('show');
+        Route::get('valider/{table}',action: [AdminDashboardController::class,'valider_demande'])->name('valider');
+    });
+    Route::prefix('releve-note')->name('releve.')->group(function(){
+        Route::get('',[AdminDashboardController::class,'get_releve'])->name('list');
+    });
+    Route::prefix('certificat')->name('certificat.')->group(function(){
+        Route::get('',[AdminDashboardController::class,'get_certificat'])->name('list');
+    });
+    Route::prefix('diplome')->name('diplome.')->group(function(){
+        Route::get('',[AdminDashboardController::class,'get_diplome'])->name('list');
+    });
+
 
 });
 

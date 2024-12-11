@@ -16,4 +16,8 @@ class Quitu extends Model
         'url',
         'etudiant_id'
     ];
+    public function demandes()
+    {
+        return $this->belongsToMany(Demande::class, 'demande_quituses', 'quitus_id', 'demande_id');
+    }
 }

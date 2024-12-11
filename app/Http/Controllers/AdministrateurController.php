@@ -68,18 +68,6 @@ class AdministrateurController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreadministrateurRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(administrateur $administrateur)
-    {
-        //
-    }
 
     public function update(administrateur $table)
     {
