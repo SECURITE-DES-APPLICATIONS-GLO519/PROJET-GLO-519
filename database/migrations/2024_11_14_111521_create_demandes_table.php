@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('demandes', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger("etudiant_id");
-            $table->string("type");
-            $table->string("statut");
-            $table->unsignedBigInteger("departement_id")->nullable(true);
+            $table->enum("type",['Demande de Certificat','Demande de releve de note','Demande de diplome']);
+            $table->enum("statut",['ENVOYER','TRAITEMENT','REFUSER','APROUVER','ANNULER']);
+            $table->unsignedBigInteger("departement_id")->nullable();
             $table->boolean("confirm_direction")->default(false);
             $table->boolean("confirm_departement")->default(false);
             $table->boolean("confirm_bibliotheque")->default(false);

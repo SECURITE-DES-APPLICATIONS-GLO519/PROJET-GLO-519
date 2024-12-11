@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AddEtudiantInformationRequest extends FormRequest
+class CertificatRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,13 +22,9 @@ class AddEtudiantInformationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'matricule'=>'required|string',
-            'nom'=>'required|string',
-            'prenom'=>'nullable|string',
             'niveau'=>'required|string',
-            'cycle'=>'required|string',
-            'user_id'=>'required|integer',
-            'date_naissance'=>'required|date',
+            'annee'=>'required|date',
+            'url'=>'required|file|mimes:jpeg,jpg,png,gif|max:2048',
         ];
     }
 }

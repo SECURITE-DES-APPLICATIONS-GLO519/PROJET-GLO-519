@@ -13,7 +13,13 @@
     </div>
     <div class="row">
         <div class="col-xs-6">
-            <a href="{{route('etudiant.certificat.add')}}" id="aj"  class="btn btn-success glyphicon glyphicon-plus" > Ajouter</a>
+            <a href="{{route('etudiant.certificat.add')}}" id="aj"  class="btn btn-success glyphicon glyphicon-plus" >Certificat</a>
+        </div>
+        <div class="col-xs-6">
+            <a href="{{route('etudiant.releve.add')}}" id="aj"  class="btn btn-success glyphicon glyphicon-plus" > Releve</a>
+        </div>
+        <div class="col-xs-6">
+            <a href="{{route('etudiant.diplome.add')}}" id="aj"  class="btn btn-success glyphicon glyphicon-plus" > Diplome</a>
         </div>
     </div>
 </div>
@@ -38,9 +44,9 @@
                             <td>{{$Liste->confirm_direction}}</td>
                             <td>{{$Liste->created_at}}</ontd>
                             
-                            <td><a  href = "{{route('etudiant.certificat.show',['table'=>$Liste])}} ">
+                            <td><a  href = "{{route('etudiant.diplome.show',['table'=>$Liste])}} ">
                                 <button type="edit">Voir les details</button></a></td>
-                            <td><a  href = "{{route('etudiant.certificat.annuler',['table'=>$Liste])}} ">
+                            <td><a  href = "{{route('etudiant.diplome.annuler',['table'=>$Liste])}} ">
                                 <button type="edit">Annuler</button></a></td>
 
                         </tr>

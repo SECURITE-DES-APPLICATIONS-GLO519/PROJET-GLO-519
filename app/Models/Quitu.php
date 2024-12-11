@@ -9,4 +9,11 @@ class Quitu extends Model
 {
     /** @use HasFactory<\Database\Factories\QuituFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'niveau',
+        'annee',
+        'url',
+        'etudiant_id'
+    ];
 }

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('prenom')->nullable();
             $table->string('niveau');
             $table->string('cycle');
-            $table->dateTime('date_naissance')->nullable();
+            $table->date('date_naissance')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

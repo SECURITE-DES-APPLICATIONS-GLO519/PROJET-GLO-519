@@ -3,5 +3,5 @@
 @section('title', "Ajout d'information")
 
 @section('content')
-    @include('etudiant.certificat.template')
+    @include('etudiant.diplome.template')
 @endsection

@@ -16,13 +16,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // User::factory(10)->create();
-        // DB::table('users')->delete();
-        // User::create([
-        //     'name'=>'Amoros',
-        //     'email'=>'amoros@gmail.com',
-        //     'role'=>'BigBoss',
-        //     'password'=>Hash::make('amoros'),
-        // ]);
         $this->call(DepartementSeeder::class);
+        $this->call(UserSeeder::class);
     }
 }

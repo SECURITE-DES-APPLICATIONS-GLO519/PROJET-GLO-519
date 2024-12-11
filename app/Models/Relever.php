@@ -9,4 +9,11 @@ class Relever extends Model
 {
     /** @use HasFactory<\Database\Factories\ReleverFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'niveau',
+        'annee',
+        'url',
+        'etudiant_id'
+    ];
 }

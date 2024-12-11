@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('relevers', function (Blueprint $table) {
             $table->id();
             $table->foreignId('etudiant_id')->constrained()->onDelete('cascade');
-            $table->string('url');
+            $table->string('url')->nullable();
             $table->string('niveau');
             $table->date('annee');
             $table->timestamps();

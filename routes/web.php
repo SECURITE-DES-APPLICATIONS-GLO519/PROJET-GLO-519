@@ -76,7 +76,7 @@ Route::prefix('test')->group(function(){
 });
 
 Route::prefix('etudiant')->name('etudiant.')->group(function(){
-    Route::get('',[EtudiantDashbordController::class,'index'])->name('');
+    Route::get('',[EtudiantDashbordController::class,'index'])->name('index');
     Route::get('show_information',[EtudiantDashbordController::class,'show_information'])->name('show_information');
     Route::get('add_information',[EtudiantDashbordController::class, 'add_information'])->name('add_information');
     Route::post('add_information',[EtudiantDashbordController::class, 'add_information_'])->name('add_information_');
@@ -87,6 +87,21 @@ Route::prefix('etudiant')->name('etudiant.')->group(function(){
         Route::get('show/{table}',[EtudiantDashbordController::class,'show_certificat'])->name('show');
         Route::get('annuler/{table}',[EtudiantDashbordController::class,'annuler_certificat'])->name('annuler');
     });
+    Route::prefix('releve-note')->name('releve.')->group(function(){
+        Route::get('',[EtudiantDashbordController::class,'get_releve'])->name('list');
+        Route::get('add',[EtudiantDashbordController::class,'add_releve'])->name('add');
+        Route::post('add',[EtudiantDashbordController::class,'add_releve_']);
+        Route::get('show/{table}',[EtudiantDashbordController::class,'show_releve'])->name('show');
+        Route::get('annuler/{table}',[EtudiantDashbordController::class,'annuler_releve'])->name('annuler');
+    });
+    Route::prefix('diplome')->name('diplome.')->group(function(){
+        Route::get('',[EtudiantDashbordController::class,'get_diplome'])->name('list');
+        Route::get('add',[EtudiantDashbordController::class,'add_diplome'])->name('add');
+        Route::post('add',[EtudiantDashbordController::class,'add_diplome_']);
+        Route::get('show/{table}',[EtudiantDashbordController::class,'show_diplome'])->name('show');
+        Route::get('annuler/{table}',[EtudiantDashbordController::class,'annuler_diplome'])->name('annuler');
+    });
+
 });
 
 require __DIR__.'/auth.php';
