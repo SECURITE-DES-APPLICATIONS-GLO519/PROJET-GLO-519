@@ -27,7 +27,7 @@
                         <form class="nav-item" action="{{route('auth.logout')}}" method="POST">
                             @method("delete")
                             @csrf
-                            <button class="btn btn-black">se deconnecter</button>
+                            <button class="btn btn-black">Déconnexion</button>
                         </form>
                     @endauth
                     @guest
@@ -57,7 +57,7 @@
         <nav>
             <ul>
                 <li><a href="">Accueil</a></li>
-                <li><a href="{{route('etudiant.show_information')}}">Information</a></li>
+                <li><a href="{{route('etudiant.show_information')}}">Informations</a></li>
                 <li><a href="{{route('etudiant.certificat.list')}}">Demande de certificat de scolarite</a></li>
                 <li><a href="">Demande de releve de note</a></li>
                 <li><a href="">Demande de retrait du diplone</a></li>
