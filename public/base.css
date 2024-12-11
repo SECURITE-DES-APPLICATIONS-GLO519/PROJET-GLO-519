@@ -192,3 +192,14 @@ aside a:hover {
   margin-left: 15%;
   margin-top: 20px;
 }
+
+.student-info {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px;
+}
+
+.student-info ul {
+  list-style: none;
+  padding: 0;
+}

@@ -58,8 +58,8 @@ Route::prefix('test')->group(function(){
             Route::get('create',[DepartementController::class,'create'])->name('create');
             Route::post('create',[DepartementController::class,'create_'])->name('create_');
             Route::get('update/{table}',[DepartementController::class, 'update'])->name('update');
-            Route::put('update/{table}',[DepartementController::class, 'update_'])->name('update_');
-            Route::delete('delete/{table}',[DepartementController::class, 'delete'])->name('delete');
+            Route::post('update/{table}',[DepartementController::class, 'update_'])->name('update_');
+            Route::get('delete/{table}',[DepartementController::class, 'delete'])->name('delete');
         });
         Route::prefix('etudiant')->name('etudiant.')->group(function(){
             Route::get('',[EtudiantController::class,'index'])->name('list');
@@ -73,6 +73,20 @@ Route::prefix('test')->group(function(){
         });
     });
 
+});
+
+Route::prefix('etudiant')->name('etudiant.')->group(function(){
+    Route::get('',[EtudiantDashbordController::class,'index'])->name('');
+    Route::get('show_information',[EtudiantDashbordController::class,'show_information'])->name('show_information');
+    Route::get('add_information',[EtudiantDashbordController::class, 'add_information'])->name('add_information');
+    Route::post('add_information',[EtudiantDashbordController::class, 'add_information_'])->name('add_information_');
+    Route::prefix('certificat')->name('certificat.')->group(function(){
+        Route::get('',[EtudiantDashbordController::class,'get_certificat'])->name('list');
+        Route::get('add',[EtudiantDashbordController::class,'add_certificat'])->name('add');
+        Route::post('add',[EtudiantDashbordController::class,'add_certificat_']);
+        Route::get('show/{table}',[EtudiantDashbordController::class,'show_certificat'])->name('show');
+        Route::get('annuler/{table}',[EtudiantDashbordController::class,'annuler_certificat'])->name('annuler');
+    });
 });
 
 require __DIR__.'/auth.php';

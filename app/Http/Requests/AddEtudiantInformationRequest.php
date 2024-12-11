@@ -28,6 +28,7 @@ class AddEtudiantInformationRequest extends FormRequest
             'niveau'=>'required|string',
             'cycle'=>'required|string',
             'user_id'=>'required|integer',
+            'date_naissance'=>'nullable|date',
         ];
     }
 }
