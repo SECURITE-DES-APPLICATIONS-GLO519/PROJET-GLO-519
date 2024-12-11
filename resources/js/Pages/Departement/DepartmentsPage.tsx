@@ -127,20 +127,21 @@ const DepartmentPage: React.FC = () => {
                                     <DepartmentList
                                         departments={tables}
                                         onEdit={(id) => {
-                                            const dept = departments.find(
-                                                (d) => d.id === id
-                                            );
+                                            // const dept = departments.find(
+                                            //     (d) => d.id === id
+                                            // );
 
-                                            handleSelectDepartment(dept);
+                                            // handleSelectDepartment(dept);
                                             // setSelectedDepartment(dept || null);
                                         }}
                                         onDelete={(id) =>
                                         {
-                                            const dept = departments.find(
-                                                (d) => d.id === id
-                                            );
+                                            // const dept = departments.find(
+                                            //     (d) => d.id === id
+                                            // );
                                             
-                                            handleDelete(dept)}
+                                            // handleDelete(dept)
+                                        }
                                         }
                                     />
                                     {/* Affichage du Modal avec le formulaire si `isModalOpen` est true */}
@@ -149,7 +150,7 @@ const DepartmentPage: React.FC = () => {
                                         onClose={() => setIsModalOpen(false)}
                                     >
                                         <DepartmentForm
-                                            department={selectedDepartment}
+                                            // department={selectedDepartment}
                                             onSubmit={handleCreateOrUpdate}
                                         />
                                     </Modal>

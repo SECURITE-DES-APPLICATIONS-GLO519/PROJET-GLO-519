@@ -15,3 +15,7 @@ declare global {
 declare module '@inertiajs/core' {
     interface PageProps extends InertiaPageProps, AppPageProps {}
 }
+
+declare module '@inertiajs/core' {
+    interface PageProp extends InertiaPageProps, AppPageProps {}
+}

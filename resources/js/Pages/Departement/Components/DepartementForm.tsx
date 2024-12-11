@@ -31,37 +31,37 @@ const DepartmentForm: React.FC<DepartmentFormProps> = ({
         onSubmit(formData);
 
         if (formData.id) {
-            Inertia.put(route("departement.update_", formData.id), formData, {
-                onSuccess: () => {
-                    debugger;
-                    enqueueSnackbar("Département mis à jour avec succès!", {
-                        variant: "success",
-                    });
-                },
-                onError: (errors) => {
-                    debugger;
-                    enqueueSnackbar(
-                        "Erreur lors de la mise à jour du département.",
-                        { variant: "error" }
-                    );
-                },
-            });
+            // Inertia.put(route("departement.update_", formData.id), formData, {
+            //     onSuccess: () => {
+            //         debugger;
+            //         enqueueSnackbar("Département mis à jour avec succès!", {
+            //             variant: "success",
+            //         });
+            //     },
+            //     onError: (errors) => {
+            //         debugger;
+            //         enqueueSnackbar(
+            //             "Erreur lors de la mise à jour du département.",
+            //             { variant: "error" }
+            //         );
+            //     },
+            // });
         } else {
-            Inertia.post(route("departement.create_"), formData, {
-                onSuccess: () => {
-                    debugger;
-                    enqueueSnackbar("Département créé avec succès!", {
-                        variant: "success",
-                    });
-                },
-                onError: (errors) => {
-                    debugger;
-                    enqueueSnackbar(
-                        "Erreur lors de la création du département.",
-                        { variant: "error" }
-                    );
-                },
-            });
+            // Inertia.post(route("departement.create_"), formData, {
+            //     onSuccess: () => {
+            //         debugger;
+            //         enqueueSnackbar("Département créé avec succès!", {
+            //             variant: "success",
+            //         });
+            //     },
+            //     onError: (errors) => {
+            //         debugger;
+            //         enqueueSnackbar(
+            //             "Erreur lors de la création du département.",
+            //             { variant: "error" }
+            //         );
+            //     },
+            // });
         }
     };
 

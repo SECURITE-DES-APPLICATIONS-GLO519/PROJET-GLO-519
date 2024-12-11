@@ -56,7 +56,7 @@ const AdministrateurList = () => {
                         <th className="px-4 py-2">Actions</th>
                     </tr>
                 </thead>
-                <tbody>
+                {/* <tbody>
                     {administrateurs &&
                         administrateurs.map((admin: any) => (
                             <tr key={admin.id}>
@@ -71,18 +71,17 @@ const AdministrateurList = () => {
                                             setUpdateModalOpen(true);
                                         }}
                                     >
-                                        {/* <FaEdit /> */}
+                             
                                     </button>
                                     <button
                                         className="text-red-500"
                                         onClick={() => handleDelete(admin)}
                                     >
-                                        {/* <FaTrashAlt /> */}
                                     </button>
                                 </td>
                             </tr>
                         ))}
-                </tbody>
+                </tbody> */}
             </table>
 
             {/* Modal de création */}
