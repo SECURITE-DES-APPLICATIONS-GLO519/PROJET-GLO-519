@@ -1,0 +1,195 @@
+
+/* Theme Colors */
+:root {
+  --dark-color: #040404;
+  --grey-color: #A9A09E;
+  --light-color: #fff;
+  --primary-color: #EC6C5A;
+}
+
+
+/* - Buttons Color Scheme
+------------------------------------------------------------- */
+.btn.btn-content {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.btn.btn-new {
+  background: rgb(37, 144, 187);
+  width: 200px;
+  margin-bottom: 20px;
+  color: var(--light-color);
+  border-style: solid black;
+  border-width: 5px;
+  border-radius: 20px;
+  box-shadow: 4px 4px 4px rgb(21, 9, 136);
+}
+
+.btn.btn-new:hover {
+  background: var(--light-color);
+  color: var(--dark-color);
+}
+
+.btn.btn-primary {
+  background: rgb(37, 144, 187);
+  width: 200px;
+  margin-bottom: 20px;
+  color: var(--light-color);
+  border-style: solid black;
+  border-width: 5px;
+  border-radius: 20px;
+  box-shadow: 4px 4px 4px rgb(21, 9, 136);
+}
+
+.btn.btn-primary:hover {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+
+
+/* Style des autres pages
+------------------------------------*/
+
+
+body{
+  background-image: url("base.png");
+  background-size: cover;
+     font-family:comic sans MS;
+     color: white;
+     font-family: comic sans ms;
+}   
+
+header {
+  background-color: var(--primary-color);
+  position: relative;
+  max-height: 100px;
+  z-index: 1030;
+  color: white;
+}
+
+
+.text-black {
+  color: black;
+}
+
+
+.space-top {
+  margin-top: 20px;
+}
+
+.table-stat thead th {
+  color: #040404;
+}
+
+.table-stat tbody tr td {
+  color: #040404;
+}
+
+.container {
+  display: flex;
+  height: calc(100vh - 4rem); /* Subtract header height */
+  margin: 0px;
+  padding: 0px;
+  max-width: 100%;
+}
+
+/* Navigation Styles */
+aside {
+  background-color: #f2f2f2;
+  border-right: 1px solid #ddd;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 100px;
+  min-height: 100%;
+  width: 230px;
+  z-index: 810;
+}
+
+aside ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+aside li {
+  margin-bottom: 0.5rem;
+}
+
+aside a {
+  color: #333;
+  text-decoration: none;
+}
+
+aside a:hover {
+  color: #000;
+}
+
+.user-panel{
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.pull-left{
+  float: left !important;
+}
+
+.image-panel {
+  width: 100%;
+  max-width: 45px;
+  height: auto;
+}
+
+.image-profil{
+  width:45px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.info-panel{
+  padding: 5px 5px 5px 15px;
+  line-height: 1;
+  position: absolute;
+  left: 55px;
+  margin-top: 10px;
+  color: var(--primary-color);
+}
+/* Main Content Styles */
+.container main {
+  padding: 1rem;
+  color: black;
+  margin: 10px;
+  margin-left: 230px;
+  width: 100%;
+}
+
+.container main .box{
+  border: 1px solid var(--primary-color);
+}
+
+.box-header{
+  color: #fff;
+  background: var(--primary-color);
+  background-color: var(--primary-color);
+  border-bottom: 1px solid #f4f4f4;
+  display: block;
+  padding: 10px;
+  position: relative;
+}
+
+.box-body{
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  padding: 10px;
+}
+
+.login{
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 20px;
+}
