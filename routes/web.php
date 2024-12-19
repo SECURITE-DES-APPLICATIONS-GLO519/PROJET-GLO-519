@@ -25,7 +25,7 @@ Route::middleware('auth')->group(function () {
 
 Route::prefix('auth')->name('auth.')->group(function(){
     Route::get('/login',[UserController::class, 'login'])->name('login');
-    Route::post('/login',[UserController::class, 'dologin']);
+    Route::post('/login',[UserController::class, 'dologin'])->middleware(['throttle:login']);
     Route::delete('/logout',[UserController::class, 'logout'])->name('logout');
 });
 Route::prefix('dashboard')->middleware('bigboss')->group(function(){
