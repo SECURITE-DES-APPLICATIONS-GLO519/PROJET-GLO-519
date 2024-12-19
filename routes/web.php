@@ -28,7 +28,7 @@ Route::prefix('auth')->name('auth.')->group(function(){
     Route::post('/login',[UserController::class, 'dologin']);
     Route::delete('/logout',[UserController::class, 'logout'])->name('logout');
 });
-Route::prefix('dashboard')->middleware('auth')->group(function(){
+Route::prefix('dashboard')->middleware('bigboss')->group(function(){
     Route::get('',[AdministrateurController::class,'index' ])->name('dashboard-bigboss');
     Route::prefix('administrateur')->name('administrateur.')->group(function(){
         Route::get('',[AdministrateurController::class,'index'])->name('list');
@@ -58,7 +58,7 @@ Route::prefix('dashboard')->middleware('auth')->group(function(){
     });
 });
 
-Route::prefix('etudiant')->middleware('auth')->name('etudiant.')->group(function(){
+Route::prefix('etudiant')->middleware('etudiant')->name('etudiant.')->group(function(){
     Route::get('',[EtudiantDashbordController::class,'index'])->name('dashboard-etudiant');
     Route::get('show_information',[EtudiantDashbordController::class,'show_information'])->name('show_information');
     Route::get('add_information',[EtudiantDashbordController::class, 'add_information'])->name('add_information');
@@ -87,7 +87,7 @@ Route::prefix('etudiant')->middleware('auth')->name('etudiant.')->group(function
 
 });
 
-Route::prefix('admin')->middleware('auth')->name('admin.')->group(function(){
+Route::prefix('admin')->middleware('admin')->name('admin.')->group(function(){
     Route::get('',[AdminDashboardController::class,'index'])->name('dashboard-admin');
     Route::prefix('demande')->name('demande.')->group(function(){
         Route::get('show/{table}',[AdminDashboardController::class,'show_demande'])->name('show');
